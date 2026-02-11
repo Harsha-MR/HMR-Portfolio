@@ -64,7 +64,7 @@ export default function App() {
                 <Skills />
                 <Resume />
                 <Certificates />
-                <Blog />
+                {/* <Blog /> */}
                 <Contact />
               </>
             )}
