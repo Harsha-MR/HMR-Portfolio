@@ -46,7 +46,8 @@ To run this project locally:
 
 ```bash
 # 1️⃣ Clone the repository
-git clone https://github.com/Harsha-MR/Harsha-Portfolio.git / git clone git@github.com:Harsha-MR/Harsha-Portfolio.git
+HTTPS: git clone https://github.com/Harsha-MR/MR-Portfolio.git
+SSH: git clone git@github.com:Harsha-MR/MR-Portfolio.git
 
 # 2️⃣ Navigate to project directory
 cd Harsha_Portfolio
