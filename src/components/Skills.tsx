@@ -6,7 +6,7 @@ interface SkillRow {
   title: string;
   items: { name: string; level: number }[];
 }
-
+  
 const SKILLS = [
   { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
   { name: "C", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
