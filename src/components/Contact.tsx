@@ -54,7 +54,7 @@ export function Contact() {
 
       try {
         await emailjs.send(serviceId, autoReplyTemplateId, templateParams, publicKey);
-        setStatus("✅ Message sent successfully! Auto-reply sent.");
+        setStatus("✅ Message sent successfully!");
       } catch {
         setStatus("✅ Message sent successfully! Auto-reply failed.");
       }

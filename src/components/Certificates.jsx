@@ -4,15 +4,63 @@ import "./Certificates.css";
 
 const CERTS = {
   tech: [
-    { title: "Flipkart Hackathon", org: "Flipkart", date: "2022", img: "/certs/flipkart.jpg" },
-    { title: "Solution Challenge", org: "Google Developers", date: "2023", img: "/certs/hack2skill.png" },
-    { title: "ADira", org: "SCET AI Club", date: "2025", img: "/certs/adira.png" },
+      {
+    title: "IEEE Research Paper Publication",
+    org: "IEEE ",
+    date: "2023",
+    img: "/certs/IEEE.png"
+  },
+    {
+      title: "NPTEL Certification",
+      org: "NPTEL (IIT)",
+      date: "2023",
+      img: "/certs/NPTEL.png",
+    },
+    {
+  title: "Artificial Intelligence Fundamentals",
+  org: "IBM SkillsBuild",
+  date: "2025",
+  img: "/certs/IBM_AI.png"
+},
+{
+  title: "Agile Scrum Certification",
+  org: "Infosys Springboard",
+  date: "2024",
+  img: "/certs/agile_scrum.png"
+},
+{
+  title: "Architecting Cloud Computing Solutions on Microsoft Azure",
+  org: "Infosys Springboard",
+  date: "2025",
+  img: "/certs/azure_cloud.png"
+},
+{
+  title: "Machine Learning Foundation Certification",
+  org: "Infosys Springboard",
+  date: "2025",
+  img: "/certs/ml_foundation.png"
+}
   ],
-  other: [
-    { title: "Codathon", org: "SCET Tech Fest", date: "2025", img: "/certs/codathon.png" },
-    { title: "Bugbuzz", org: "SCET Tech Fest", date: "2025", img: "/certs/bugbuzz.png" },
-    { title: "Dataloom", org: "SCET", date: "2024", img: "/certs/dataloom.png" },
-  ],
+  // other: [
+  //   {
+  //     title: "Codathon",
+  //     org: "SCET Tech Fest",
+  //     date: "2025",
+  //     img: "/certs/codathon.png",
+  //   },
+  //   {
+  //     title: "Bugbuzz",
+  //     org: "SCET Tech Fest",
+  //     date: "2025",
+  //     img: "/certs/bugbuzz.png",
+  //   },
+  //   {
+  //     title: "Dataloom",
+  //     org: "SCET",
+  //     date: "2024",
+  //     img: "/certs/dataloom.png",
+  //   },
+  // ],
 };
 
 export default function Certificates() {
@@ -41,7 +89,7 @@ export default function Certificates() {
 
         {/* TABS */}
         <div className="cert-tabs">
-          {["tech", "other"].map((t) => (
+          {["tech",].map((t) => (
             <button
               key={t}
               onClick={() => setTab(t)}

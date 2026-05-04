@@ -5,62 +5,54 @@ import "./projects.css";
 
 const PROJECTS = [
   {
-    title: "🩺 Mammogram Malignancy Detector",
-    desc: "Hybrid CNN + YOLOv8 ensemble for full-image breast cancer detection with ROI preprocessing and sliding-window inference.",
-    ss: "/mamo.png",
-    tech: ["TensorFlow", "Keras", "OpenCV", "YOLOv8"],
+    title: "🛡️ Intelligent SQL Injection Detection System",
+    desc: "Hybrid CNN and rule-based system to detect malicious SQL queries with high accuracy, combining deep learning and pattern-based filtering.",
+    ss: "/SQLi.png",
+    tech: ["Python", "TensorFlow", "CNN", "Cybersecurity"],
     live: "#",
-    code: "https://github.com/kunjdesai/mammo-detector",
+    code: "#",
   },
   {
-    title: "🧠 Mental Health Analyzer",
-    desc: "NLP-based system that analyzes user text for anxiety, stress, and depression indicators.",
-    ss: "/mentalhealth.jpg",
-    tech: ["Python", "Transformers", "NLTK", "scikit-learn"],
-    live: "https://mental-health-analyzer.streamlit.app/",
-    code: "https://github.com/kunj2803/Mental-Health-Analyzer",
-  },
-  {
-    title: "🤖 Indian Sign Language Interpreter",
-    desc: "Real-time gesture recognition using Mediapipe + TensorFlow for sign-to-text translation.",
-    ss: "/ISL.png",
-    tech: ["Mediapipe", "TensorFlow", "React", "Flask"],
+    title: "🏭 Smart Factory Digital Twin & Production Planner",
+    desc: "3D visualization platform for factory environments with real-time production planning, machine tracking, and operational insights.",
+    ss: "/digitalTwin.png",
+    tech: ["React", "Three.js", "Node.js", "MongoDB"],
     live: "#",
-    code: "https://github.com/kunjdesai/ISL-Interpreter",
+    code: "#",
   },
   {
-    title: "💼 Portfolio Website",
-    desc: "Modern portfolio built with React + Framer Motion with smooth animations and clean UI.",
+    title: "💼 Developer Portfolio Website",
+    desc: "Modern responsive portfolio showcasing projects, certifications, and skills with smooth UI and interactive design.",
     ss: "/portfolio.jpg",
-    tech: ["React", "Framer Motion", "Tailwind CSS"],
-    live: "https://kunj-desai.vercel.app/",
-    code: "https://github.com/kunj2803/Kunj-Portfolio",
-  },
-  {
-    title: "💬 DocuChat – Gemini AI Chatbot",
-    desc: "Gemini-powered PDF analyzer that answers queries from uploaded documents.",
-    ss: "/Docuchat.png",
-    tech: ["Gemini API", "LangChain", "Python", "Streamlit"],
-    live: "https://docuchat-chatbot.streamlit.app/",
-    code: "https://github.com/kunj2803/Docuchat-Chatbot",
-  },
-  {
-    title: "📊 ProfileX – Data Profiler",
-    desc: "Smart data profiling dashboard for CSV datasets — summary, visualization, and cleaning.",
-    ss: "/ProfileX.png",
-    tech: ["Streamlit", "Pandas", "Plotly"],
-    live: "https://profilex.streamlit.app/",
-    code: "https://github.com/kunjdesai/ProfileX",
-  },
-  {
-    title: "🧬 Breast Cancer Prediction",
-    desc: "ML pipeline using SVC, RF, and XGBoost with SMOTE for dataset balancing.",
-    ss: "/breastpred.jpg",
-    tech: ["scikit-learn", "XGBoost", "Pandas"],
+    tech: ["React", "Framer Motion", "CSS"],
     live: "#",
-    code: "https://github.com/kunjdesai/BreastCancerPrediction",
+    code: "#",
   },
-];
+  {
+    title: "🌦️ Weather Analytics Dashboard",
+    desc: "Interactive dashboard for analyzing weather data with real-time updates, visual insights, and trend forecasting.",
+    ss: "/weather.png",
+    tech: ["React", "API Integration", "Chart.js"],
+    live: "#",
+    code: "#",
+  },
+  {
+    title: "🚌 Online Bus Ticket Booking System",
+    desc: "Full-stack web application for booking and managing bus tickets with seat selection, scheduling, and user authentication.",
+    ss: "/bus.png",
+    tech: ["React", "Node.js", "Express", "MongoDB"],
+    live: "#",
+    code: "#",
+  },
+  {
+    title: "📋 Task Distribution System with RBAC",
+    desc: "Role-based task management system with admin-agent workflow, CSV upload, and automated task allocation.",
+    ss: "/taskDistributor.png",
+    tech: ["React", "Node.js", "Express", "MongoDB", "JWT"],
+    live: "#",
+    code: "#",
+  }
+]
 
 export default function Projects() {
   const sectionRef = useRef(null);
@@ -143,7 +135,7 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="project-links">
+                {/* <div className="project-links">
                   <motion.a
                     href={p.code}
                     target="_blank"
@@ -161,7 +153,7 @@ export default function Projects() {
                   >
                     <ExternalLink size={14} /> Live
                   </motion.a>
-                </div>
+                </div> */}
               </div>
             </motion.div>
           ))}
