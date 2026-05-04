@@ -18,7 +18,7 @@ export function Contact() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!form.name || !form.email || !form.subject || !form.message) {
@@ -35,27 +35,36 @@ export function Contact() {
     setSending(true);
     setStatus("Sending...");
 
-    emailjs
-      .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          user_email: form.email,
-          subject: form.subject,
-          message: form.message,
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
-      .then(() => {
-        setStatus("✅ Message sent successfully!");
-        setForm({ name: "", email: "", subject: "", message: "" });
-        setSending(false);
-      })
-      .catch(() => {
-        setStatus("❌ Failed to send message. Please try again.");
-        setSending(false);
-      });
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const mainTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const autoReplyTemplateId = import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+      const templateParams = {
+        name: form.name,
+        email: form.email,
+        subject: form.subject,
+        message: form.message,
+        time: new Date().toLocaleString(),
+        to_name: form.name,
+        to_email: form.email,
+      };
+
+      await emailjs.send(serviceId, mainTemplateId, templateParams, publicKey);
+
+      try {
+        await emailjs.send(serviceId, autoReplyTemplateId, templateParams, publicKey);
+        setStatus("✅ Message sent successfully! Auto-reply sent.");
+      } catch {
+        setStatus("✅ Message sent successfully! Auto-reply failed.");
+      }
+
+      setForm({ name: "", email: "", subject: "", message: "" });
+    } catch {
+      setStatus("❌ Failed to send message. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const contactInfo = [
