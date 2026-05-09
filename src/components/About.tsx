@@ -104,7 +104,7 @@ export function About() {
     { icon: CodeXml, label: "Projects Completed", value: 7 },
     { icon: Timer, label: "Years Experience in Development", value: 2 },
     { icon: Cpu, label: "Technologies Mastered", value: 10 },
-    { icon: Trophy, label: "LeetCode Solved", value: 100 },
+    { icon: Trophy, label: "LeetCode Solved", value: 70 },
   ];
 
   const [countValues, setCountValues] = useState(counters.map(() => 0));

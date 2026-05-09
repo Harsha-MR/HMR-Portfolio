@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 const media = import.meta.glob(
   "/src/assets/Photography/*.{jpg,jpeg,png,gif,webp,heic,heif,mp4,mov,m4v,webm,avi}",
@@ -22,13 +22,52 @@ export function PhotographyFrames() {
     isVideo: boolean;
     alt: string;
   } | null>(null);
+  const preloadRefs = useRef<HTMLVideoElement[]>([]);
 
   const items = useMemo(() => Object.entries(media), []);
+  const videoSources = useMemo(
+    () =>
+      items
+        .map(([path, mod]) => {
+          const src = (mod as { default: string }).default;
+          const lowerPath = path.toLowerCase();
+          const isVideo = videoExtensions.some((ext) => lowerPath.endsWith(ext));
+
+          return isVideo ? src : null;
+        })
+        .filter((src): src is string => Boolean(src)),
+    [items]
+  );
 
   useEffect(() => {
     // delay for smooth section-switch animation
-    setTimeout(() => setLoaded(true), 80);
+    const timer = window.setTimeout(() => setLoaded(true), 80);
+    return () => window.clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (videoSources.length === 0) {
+      return;
+    }
+
+    preloadRefs.current = videoSources.map((src) => {
+      const video = document.createElement("video");
+      video.preload = "auto";
+      video.src = src;
+      video.muted = true;
+      video.playsInline = true;
+      video.load();
+      return video;
+    });
+
+    return () => {
+      preloadRefs.current.forEach((video) => {
+        video.removeAttribute("src");
+        video.load();
+      });
+      preloadRefs.current = [];
+    };
+  }, [videoSources]);
 
   useEffect(() => {
     const handleKey = (event: KeyboardEvent) => {
@@ -73,7 +112,7 @@ export function PhotographyFrames() {
                   playsInline
                   loop
                   autoPlay
-                  preload="metadata"
+                  preload="auto"
                   aria-label="photography video"
                 />
               ) : (
@@ -105,6 +144,7 @@ export function PhotographyFrames() {
                 playsInline
                 controls
                 autoPlay
+                preload="auto"
               />
             ) : (
               <img src={activeItem.src} alt={activeItem.alt} />

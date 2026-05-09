@@ -44,10 +44,10 @@ export function Navbar() {
             {/* Logo (smaller circle) */}
             <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shrink-0 relative overflow-hidden border-2 border-transparent transition-all duration-300 hover:shadow-[0_0_0_4px_rgba(59,130,246,0.5)] hover:border-blue-500">
               
-              <img 
-                src="./HMR_logo.png" 
-                alt="HMR Logo" 
-                className="w-12 h-12 object-contain pointer-events-none select-none" 
+              <img
+                src="/HMR_logo.png"
+                alt="HMR Logo"
+                className="w-12 h-12 rounded-full object-cover pointer-events-none select-none"
                 style={{ display: 'block' }}
               />
             </div>
@@ -57,7 +57,7 @@ export function Navbar() {
                 Harsha Kumar M R
               </span>
               <span className="text-blue-500 dark:text-purple-100 font-medium text-sm md:text-base">
-                Full Stack Developer
+                Software Developer
               </span>
             </div>
           </motion.div>

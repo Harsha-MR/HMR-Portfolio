@@ -11,23 +11,23 @@ const FRIENDS = [
   },
   {
     name: "D Amogha Hande",
-    img: "./prapti.jpg",
+    img: "./amogh.jpeg",
     role: "Data Scientist",
     link: "#",
     intro: `Transforming complex data into meaningful insights through analytics, machine learning, and intelligent decision-making.`
   },
   {
     name: "Rahul S Srivastava",
-    img: "./bhavya.jpg",
+    img: "./rahul.jpeg",
     role: "Software Developer",
-    link: "#",
+    link: "https://www.linkedin.com/in/rahul-s-srivastava2112/",
     intro: `Developing reliable and user-focused applications that combine performance, creativity, and modern technologies.`
   },
   {
     name: "Nishanth M",
-    img: "./prapti.jpg",
+    img: "./nishanth.png",
     role: "Software Developer",
-    link: "#",
+    link: "https://www.linkedin.com/in/nishanth-m-aa8654259/",
     intro: `Passionate about crafting seamless digital experiences with optimized code and problem-solving driven development.`
   }
 ];
