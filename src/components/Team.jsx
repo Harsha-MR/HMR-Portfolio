@@ -13,7 +13,7 @@ const FRIENDS = [
     name: "D Amogha Hande",
     img: "./amogh.jpeg",
     role: "Data Scientist",
-    link: "#",
+    link: "https://www.linkedin.com/in/amogh-hande-0741062a9/",
     intro: `Transforming complex data into meaningful insights through analytics, machine learning, and intelligent decision-making.`
   },
   {
