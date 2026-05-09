@@ -3,8 +3,8 @@ import { ArrowLeft, User, Briefcase, Trophy, Camera } from "lucide-react";
 import "./GalleryPage.css";
 
 import { PersonalGrid } from "./gallery/PersonalGrid";
-import { ProjectsFeed } from "./gallery/ProjectsFeed";
-import { AchievementsFeed } from "./gallery/AchievementsFeed";
+// import { ProjectsFeed } from "./gallery/ProjectsFeed";
+// import { AchievementsFeed } from "./gallery/AchievementsFeed";
 import { PhotographyFrames } from "./gallery/PhotographyFrames";
 
 interface GalleryPageProps {
@@ -24,8 +24,8 @@ export function GalleryPage({ theme, onBack }: GalleryPageProps) {
 
   const categories = [
     { key: "personal", name: "Personal Life", icon: User },
-    { key: "projects", name: "Projects & Work", icon: Briefcase },
-    { key: "achievements", name: "Achievements", icon: Trophy },
+    // { key: "projects", name: "Projects & Work", icon: Briefcase },
+    // { key: "achievements", name: "Achievements", icon: Trophy },
     { key: "photography", name: "Photography Lab", icon: Camera },
   ];
 
@@ -65,8 +65,8 @@ export function GalleryPage({ theme, onBack }: GalleryPageProps) {
       {/* CATEGORY BODY */}
       <section className="category-section animate">
         {activeCategory === "personal" && <PersonalGrid />}
-        {activeCategory === "projects" && <ProjectsFeed />}
-        {activeCategory === "achievements" && <AchievementsFeed />}
+        {/* {activeCategory === "projects" && <ProjectsFeed />}
+        {activeCategory === "achievements" && <AchievementsFeed />} */}
         {activeCategory === "photography" && <PhotographyFrames />}
       </section>
     </div>

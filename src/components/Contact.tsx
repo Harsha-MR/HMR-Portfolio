@@ -78,7 +78,7 @@ export function Contact() {
     { icon: Linkedin, url: "https://www.linkedin.com/in/harshamr92/" },
     { icon: Mail, url: "mailto:harshakumarmr88@gmail.com" },
     { icon: MessageCircle, url: "https://wa.me/+919380245433" },
-    { icon: Instagram, url: "https://www.instagram.com/kunj_2834/" },
+    { icon: Instagram, url: "https://www.instagram.com/harshaa_mr/" },
   ];
 
   return (

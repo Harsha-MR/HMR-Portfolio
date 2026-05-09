@@ -130,8 +130,8 @@ export function About() {
   /* ===== IMAGE + TEXT ===== */
   const getImageWidth = () =>
     scrollProgress < 0.2 ? 100 :
-    scrollProgress < 0.6 ? 100 - ((scrollProgress - 0.4) / 0.2) * 50 :
-    50;
+      scrollProgress < 0.6 ? 100 - ((scrollProgress - 0.4) / 0.2) * 50 :
+        50;
 
   const NAVBAR_HEIGHT = 80;
 
@@ -142,8 +142,8 @@ export function About() {
 
   const getTextOpacity = () =>
     scrollProgress < 0.4 ? 0 :
-    scrollProgress < 0.6 ? (scrollProgress - 0.4) / 0.2 :
-    1;
+      scrollProgress < 0.6 ? (scrollProgress - 0.4) / 0.2 :
+        1;
 
   return (
     <section id="about" className="about-wrapper">
@@ -162,7 +162,7 @@ export function About() {
             className="about-image"
             style={{ width: `${getImageWidth()}%`, transform: getImageTransform() }}
           >
-            <img src="./temp.jpg" alt="Profile" />
+            <img src="./codeLogo.png" alt="Profile" />
           </div>
 
           {/* INFO PANEL */}
@@ -185,15 +185,15 @@ export function About() {
               </h2>
 
               <p>
-                I’m Harsha Kumar M R, a passionate Full Stack Developer with a strong interest in Artificial Intelligence and Machine Learning. I enjoy building end-to-end web applications that are scalable, efficient, and user-focused, while exploring how intelligent systems can be integrated into modern software solutions.
+                I’m Harsha Kumar M R, a passionate Software Developer who enjoys building scalable, efficient, and user-focused applications. I love transforming ideas into practical digital solutions and continuously exploring modern technologies to create impactful software experiences.
               </p>
 
               <p>
-                As a 4th-year B.Tech CSE student, I have hands-on experience with React, Node.js, and Python, along with a strong foundation in AI and ML. I’m skilled in building APIs, managing databases, and integrating intelligent features into web applications.
+                As a 4th-year B E CSE student, I have hands-on experience with React, Node.js, JavaScript, and Python, along with a strong foundation in software development principles. I’m skilled in developing responsive web applications, building APIs, and managing databases while writing clean and maintainable code.
               </p>
+
               <p>
-                I focus on creating applications that are both functional and user-friendly, with attention to design and experience. My goal is to grow as a full stack developer while using AI-driven techniques to build smarter solutions, and I’m seeking internship opportunities to learn and contribute professionally.
-                
+                I focus on building reliable and user-friendly applications with clean and efficient solutions. I’m currently seeking opportunities to enhance my skills, contribute to real-world projects, and grow as a software developer.
               </p>
             </div>
           </div>

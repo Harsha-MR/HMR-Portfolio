@@ -69,7 +69,7 @@ export function Gallery({ theme, onOpenGalleryPage }: GalleryProps) {
       >
         {/* IMAGE ZOOM-IN ON LOAD */}
         <motion.img
-          src="./gallery5.jpg"
+          src="./landscape.png"
           alt="hero"
           initial={{ scale: 2, opacity: 0 }}
           animate={loaded && isInView ? { scale: 1, opacity: 1 } : {}}

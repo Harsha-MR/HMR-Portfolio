@@ -20,7 +20,7 @@ export function FloatingNav() {
     { icon: Github, href: 'https://github.com/Harsha-MR', label: 'GitHub' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/harshamr92/', label: 'LinkedIn' },
     { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Instagram, href: 'https://www.instagram.com/kunj_2834/', label: 'Instagram' },
+    { icon: Instagram, href: 'https://www.instagram.com/harshaa_mr/', label: 'Instagram' },
     { icon: LeetCodeIcon, href: 'https://leetcode.com/u/Harsha-MR/', label: 'LeetCode' },
     { icon: Mail, href: 'mailto:harshakumarmr88@gmail.com', label: 'Email' },
   ];

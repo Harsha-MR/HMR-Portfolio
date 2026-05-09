@@ -3,18 +3,32 @@ import "./Team.css";
 
 const FRIENDS = [
   {
-    name: "Bhavya Bavisi",
+    name: "Kshitij K",
     img: "./bhavya.jpg",
-    role: "AI | Backend Developer",
-    link: "https://www.linkedin.com/in/bhavya-bavisi-61a592281/?originalSubdomain=in",
-    intro: `AI-ML Engineer designing intelligent systems that solve real problems, efficiently and elegantly.`
+    role: "Software Developer",
+    link: "#",
+    intro: `Building scalable software solutions with clean architecture, efficient code, and a passion for innovation.`
   },
   {
-    name: "Prapti Mehta",
+    name: "D Amogha Hande",
     img: "./prapti.jpg",
-    role: "Frontend + UI Designer",
-    link: "https://praptiwebsite.netlify.app",
-    intro: `Crafting intelligent systems, decoding data, and solving real-world problems with purpose.`
+    role: "Data Scientist",
+    link: "#",
+    intro: `Transforming complex data into meaningful insights through analytics, machine learning, and intelligent decision-making.`
+  },
+  {
+    name: "Rahul S Srivastava",
+    img: "./bhavya.jpg",
+    role: "Software Developer",
+    link: "#",
+    intro: `Developing reliable and user-focused applications that combine performance, creativity, and modern technologies.`
+  },
+  {
+    name: "Nishanth M",
+    img: "./prapti.jpg",
+    role: "Software Developer",
+    link: "#",
+    intro: `Passionate about crafting seamless digital experiences with optimized code and problem-solving driven development.`
   }
 ];
 

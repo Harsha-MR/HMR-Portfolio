@@ -1288,8 +1288,21 @@
   transition: transform .3s ease, filter .3s ease;
 }
 
+.masonry-item video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0px;
+  transition: transform .3s ease, filter .3s ease;
+}
+
 /* HOVER EFFECT */
 .masonry-item:hover img {
+  transform: scale(1.03);
+  filter: brightness(115%);
+}
+
+.masonry-item:hover video {
   transform: scale(1.03);
   filter: brightness(115%);
 }

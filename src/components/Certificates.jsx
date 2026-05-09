@@ -84,7 +84,7 @@ export default function Certificates() {
           </span>
         </h2>
         <p className="cert-subtitle">
-          Explore my achievements — both technical & beyond.
+          Explore my technical achievements.
         </p>
 
         {/* TABS */}

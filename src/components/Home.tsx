@@ -26,7 +26,7 @@ export function Home({ theme }: HeroProps) {
     { img: linkedinLogo, link: "https://www.linkedin.com/in/harshamr92/" },
     { img: gmailLogo, link: "mailto:harshakumarmr88@gmail.com" },
     { img: whatsappLogo, link: "https://wa.me/+919380245433" },
-    { img: instagramLogo, link: "https://www.instagram.com/kunj_2834/" },
+    { img: instagramLogo, link: "https://www.instagram.com/harshaa_mr/" },
     // { img: facebookLogo, link: "https://www.facebook.com/kunj.desai.222608" },
   ];
 

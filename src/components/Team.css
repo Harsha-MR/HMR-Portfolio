@@ -14,13 +14,13 @@
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
   gap: 2rem;
 }
 
 .team-card {
   display: flex;
-  width: 700px;
+  width: 100%;
   gap: 1.8rem;
   padding: 1.7rem;
   align-items: center;

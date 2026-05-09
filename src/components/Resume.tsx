@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Download, GraduationCap, Laptop, Layers } from "lucide-react";
-import "./Resume.css";
+import "./Resume.css"
 
 export function Resume() {
   const fadeRight = {
@@ -75,7 +75,7 @@ export function Resume() {
             transition={{ delay: 0.2, duration: 0.7 }}
             className="profile-info"
           >
-            📚 B.Tech — Computer Science And Engineering<br />
+            📚 BE — Computer Science And Engineering<br />
             📍 Bengaluru, Karnataka, India<br />
             📩 harshakumarmr88@gmail.com | 📱 +91 9380245433
           </motion.p>
@@ -125,7 +125,7 @@ export function Resume() {
           <div className="resume-list">
             {[
               {
-                degree: "B.Tech in Computer Science And Engineering",
+                degree: "BE in Computer Science And Engineering",
                 school: "Global Academy of Technology Bengaluru, Karnataka, India",
                 period: "2022 – 2026",
                 detail: "Current CGPA: 9.03",
@@ -162,7 +162,7 @@ export function Resume() {
         </motion.div>
 
         {/* PROJECTS */}
-        <motion.div
+        {/* <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -183,10 +183,10 @@ export function Resume() {
 
           <ul className="project-list">
             {[
-              "- Malicious SQL Query Detection System — Hybrid CNN + Rule-Based Model",
-              "- Tasks Distributor System with Role-Based Access Control",
-              "- Weather Analytics Dashboard",
-              "- Online Bus Ticket Booking and Reservation System",
+              " Malicious SQL Query Detection System — Hybrid CNN + Rule-Based Model",
+              " Tasks Distributor System with Role-Based Access Control",
+              " Weather Analytics Dashboard",
+              " Online Bus Ticket Booking and Reservation System",
 
             ].map((project, i) => (
               <motion.li
@@ -200,7 +200,7 @@ export function Resume() {
               </motion.li>
             ))}
           </ul>
-        </motion.div>
+        </motion.div> */}
 
         {/* SKILLS */}
         <motion.div
