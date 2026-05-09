@@ -36,7 +36,7 @@ export function Home({ theme }: HeroProps) {
   ];
 
   const [typedRoles, setTypedRoles] = useState("");
-  const rolesText = "Computer Science Engineer | Full Stack Developer | Tech Explorer";
+  const rolesText = "Computer Science Engineer | Software Developer | Tech Explorer";
 
   useEffect(() => {
     let i = 0;

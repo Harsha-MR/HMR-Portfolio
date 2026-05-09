@@ -251,6 +251,7 @@
   display: block;
   position: relative;
   animation: pop .6s ease forwards;
+  cursor: pointer;
 }
 
 .masonry-item img {
@@ -278,6 +279,75 @@
 .masonry-item:hover video {
   transform: scale(1.03);
   filter: brightness(115%);
+}
+
+/* GALLERY LIGHTBOX */
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.gallery-modal-media {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: galleryPop .22s ease-out;
+}
+
+.gallery-modal-media img,
+.gallery-modal-media video {
+  width: auto;
+  height: auto;
+  max-width: 92vw;
+  max-height: 86vh;
+  object-fit: contain;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.gallery-modal-close {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.gallery-modal-close:hover {
+  opacity: 0.85;
+}
+
+@keyframes galleryPop {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* CARD POP ANIMATION FOR EACH IMAGE */

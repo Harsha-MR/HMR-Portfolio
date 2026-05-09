@@ -4,9 +4,9 @@ import "./Team.css";
 const FRIENDS = [
   {
     name: "Kshitij K",
-    img: "./bhavya.jpg",
+    img: "./kshitij.jpeg",
     role: "Software Developer",
-    link: "#",
+    link: "https://www.linkedin.com/in/kshitij-k-895783239/",
     intro: `Building scalable software solutions with clean architecture, efficient code, and a passion for innovation.`
   },
   {
