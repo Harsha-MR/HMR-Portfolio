@@ -7,6 +7,52 @@
   transition: 0.4s ease;
 }
 
+.gallery-preload {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--d-bg);
+  color: var(--d-text);
+  padding: 40px 20px;
+}
+
+.gallery-preload-card {
+  width: min(460px, 90vw);
+  padding: 26px 24px;
+  border-radius: 18px;
+  background: var(--d-nav-bg);
+  border: 1px solid var(--d-border);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.gallery-preload-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.gallery-preload-track {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.gallery-preload-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #22d3ee, #0ea5e9, #2563eb);
+  transition: width 0.12s ease;
+}
+
+.gallery-preload-percent {
+  margin-top: 12px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
 /******** NAVBAR ********/
 .gallery-navbar {
   width: 100%;
@@ -53,6 +99,7 @@
   font-weight: 800;
   background: linear-gradient(90deg, var(--d-text), var(--d-accent));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -88,7 +135,7 @@
   gap: 8px;
   cursor: pointer;
   transition: 0.3s ease;
-  z-index: ;
+  z-index: 1;
 }
 
 .back-btn:hover {
@@ -206,7 +253,7 @@
 /******** LAYOUT ********/
 .gallery-container { background: var(--d-bg); color: var(--d-text); min-height: 100vh; }
 .gallery-navbar { display:flex; justify-content:space-between; align-items:center; padding:22px 80px; backdrop-filter:blur(12px); background:var(--d-nav-bg); border-bottom:1px solid var(--d-border); }
-.gallery-title { font-size:34px; font-weight:800; background:linear-gradient(90deg,var(--d-text),var(--d-accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.gallery-title { font-size:34px; font-weight:800; background:linear-gradient(90deg,var(--d-text),var(--d-accent)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
 
 /******** NAV LINKS ********/
 .gallery-links { display:flex; gap:45px; font-size:17px; font-weight:500; }

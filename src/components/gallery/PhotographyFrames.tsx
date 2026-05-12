@@ -4,6 +4,7 @@ const media = import.meta.glob(
   "/src/assets/Photography/*.{jpg,jpeg,png,gif,webp,heic,heif,mp4,mov,m4v,webm,avi}",
   {
     eager: true,
+    import: "default",
   }
 );
 
@@ -29,7 +30,7 @@ export function PhotographyFrames() {
     () =>
       items
         .map(([path, mod]) => {
-          const src = (mod as { default: string }).default;
+          const src = mod as string;
           const lowerPath = path.toLowerCase();
           const isVideo = videoExtensions.some((ext) => lowerPath.endsWith(ext));
 
@@ -87,7 +88,7 @@ export function PhotographyFrames() {
     <div className={`masonry-wrapper ${loaded ? "show" : ""}`}>
       <div className="masonry">
         {items.map(([path, mod], index) => {
-          const src = (mod as { default: string }).default;
+          const src = mod as string;
           const lowerPath = path.toLowerCase();
           const isVideo = videoExtensions.some((ext) => lowerPath.endsWith(ext));
           const alt = "photography";
