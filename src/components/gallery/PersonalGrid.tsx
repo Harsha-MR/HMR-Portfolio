@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 const media = import.meta.glob(
   "/src/assets/Personal/*.{jpg,jpeg,png,gif,webp,heic,heif,mp4,mov,m4v,webm,avi}",
@@ -84,6 +85,21 @@ export function PersonalGrid() {
     return () => window.removeEventListener("keydown", handleKey);
   }, [activeItem]);
 
+  useEffect(() => {
+    if (!activeItem) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [activeItem]);
+
+  const portalTarget = typeof document !== "undefined" ? document.body : null;
+
   return (
     <div className={`masonry-wrapper ${loaded ? "show" : ""}`}>
       <div className="masonry">
@@ -124,35 +140,37 @@ export function PersonalGrid() {
         })}
       </div>
 
-      {activeItem && (
-        <div className="gallery-modal" role="dialog" aria-modal="true">
-          <div
-            className="gallery-modal-backdrop"
-            onClick={() => setActiveItem(null)}
-          />
-          <div className="gallery-modal-media">
-            <button
-              className="gallery-modal-close"
+      {activeItem && portalTarget &&
+        createPortal(
+          <div className="gallery-modal" role="dialog" aria-modal="true">
+            <div
+              className="gallery-modal-backdrop"
               onClick={() => setActiveItem(null)}
-              aria-label="Close"
-            >
-              X
-            </button>
-            {activeItem.isVideo ? (
-              <video
-                src={activeItem.src}
-                muted
-                playsInline
-                controls
-                autoPlay
-                preload="auto"
-              />
-            ) : (
-              <img src={activeItem.src} alt={activeItem.alt} />
-            )}
-          </div>
-        </div>
-      )}
+            />
+            <div className="gallery-modal-media">
+              <button
+                className="gallery-modal-close"
+                onClick={() => setActiveItem(null)}
+                aria-label="Close"
+              >
+                X
+              </button>
+              {activeItem.isVideo ? (
+                <video
+                  src={activeItem.src}
+                  muted
+                  playsInline
+                  controls
+                  autoPlay
+                  preload="auto"
+                />
+              ) : (
+                <img src={activeItem.src} alt={activeItem.alt} />
+              )}
+            </div>
+          </div>,
+          portalTarget
+        )}
     </div>
   );
 }

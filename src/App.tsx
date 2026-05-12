@@ -15,6 +15,52 @@ import { Blog } from "./components/Blog";
 import { Contact } from "./components/Contact";
 import { ThemeToggle } from "./components/ThemeToggle";
 
+const galleryVideoExtensions = [
+  ".mp4",
+  ".mov",
+  ".m4v",
+  ".webm",
+  ".avi",
+];
+
+const galleryPersonalMedia = Object.values(
+  import.meta.glob(
+    "/src/assets/Personal/*.{jpg,jpeg,png,gif,webp,heic,heif,mp4,mov,m4v,webm,avi}",
+    { eager: true, import: "default" }
+  )
+) as string[];
+
+const galleryPhotographyMedia = Object.values(
+  import.meta.glob(
+    "/src/assets/Photography/*.{jpg,jpeg,png,gif,webp,heic,heif,mp4,mov,m4v,webm,avi}",
+    { eager: true, import: "default" }
+  )
+) as string[];
+
+const galleryMediaSources = [...galleryPersonalMedia, ...galleryPhotographyMedia];
+
+function isGalleryVideo(src: string) {
+  const lower = src.toLowerCase();
+  return galleryVideoExtensions.some((ext) => lower.endsWith(ext));
+}
+
+function preloadGalleryImage(src: string) {
+  const img = new Image();
+  img.src = src;
+  if ("decode" in img) {
+    img.decode().catch(() => undefined);
+  }
+}
+
+function preloadGalleryVideo(src: string) {
+  const video = document.createElement("video");
+  video.preload = "auto";
+  video.muted = true;
+  video.playsInline = true;
+  video.src = src;
+  video.load();
+}
+
 export default function App() {
   const [theme, setTheme] = useState<"light" | "dark">("dark");
   const [introDone, setIntroDone] = useState(false);
@@ -29,6 +75,45 @@ export default function App() {
     document.documentElement.classList.toggle("dark", theme === "dark");
     localStorage.setItem("theme", theme);
   }, [theme]);
+
+  useEffect(() => {
+    if (galleryMediaSources.length === 0 || typeof window === "undefined") {
+      return;
+    }
+
+    let cancelled = false;
+    const preloadAll = () => {
+      if (cancelled) return;
+      galleryMediaSources.forEach((src) => {
+        if (isGalleryVideo(src)) {
+          preloadGalleryVideo(src);
+        } else {
+          preloadGalleryImage(src);
+        }
+      });
+    };
+
+    const win = window as Window & {
+      requestIdleCallback?: (callback: () => void, options?: { timeout: number }) => number;
+      cancelIdleCallback?: (handle: number) => void;
+    };
+
+    if (win.requestIdleCallback) {
+      const handle = win.requestIdleCallback(preloadAll, { timeout: 2000 });
+      return () => {
+        cancelled = true;
+        if (win.cancelIdleCallback) {
+          win.cancelIdleCallback(handle);
+        }
+      };
+    }
+
+    const timer = window.setTimeout(preloadAll, 600);
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+    };
+  }, []);
 
   return (
     <div className="bg-white dark:bg-black min-h-screen relative overflow-x-hidden transition-colors duration-300">

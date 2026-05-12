@@ -315,7 +315,7 @@
   --text-muted2: #0905ff;
   --accent: #12f7ff;
   --accent-hover: #ff3f73;
-  --hero-bg: url('./Hero.jpg'); /* dark theme bg */
+  --hero-bg: url("/HMR_backgroundPic.png"); /* dark theme bg */
   --line : #ffffff;
 }
 
@@ -327,6 +327,6 @@
   --text-muted2: #ff0000;
   --accent: #00cfff;
   --accent-hover: #ff3f73;
-  --hero-bg: url('./j.jpg'); /* light theme bg */
+  --hero-bg: url("/portfolio.jpg"); /* light theme bg */
   --line : #000000;
 }

@@ -60,6 +60,7 @@
 
 .gradient-text {
   background: linear-gradient(to right, #8e2de2, #4a00e0, #ff0080);
+  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -315,7 +316,7 @@
   --text-muted2: #0905ff;
   --accent: #12f7ff;
   --accent-hover: #ff3f73;
-  --hero-bg: url("/Hero.jpg"); /* dark theme bg */
+  --hero-bg: url("/HMR_backgroundPic.png"); /* dark theme bg */
   --line : #ffffff;
 }
 
@@ -327,7 +328,7 @@
   --text-muted2: #ff0000;
   --accent: #00cfff;
   --accent-hover: #ff3f73;
-  --hero-bg: url("/j.jpg"); /* light theme bg */
+  --hero-bg: url("/portfolio.jpg"); /* light theme bg */
   --line : #000000;
 }
 
@@ -355,6 +356,7 @@
 
 .grad {
   background: linear-gradient(90deg, var(--accent), #9b4dff);
+  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -397,14 +399,18 @@
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1vw;
 }
 
 .about-image img {
   width: 100%;
-  height: 150%;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
   object-position: center;
-  filter: brightness(0.9);
+  filter: brightness(1);
 }
 
 /* ============== INFO RIGHT - NEW CARD UI ============== */
@@ -465,6 +471,7 @@
   font-weight: 700;
   margin-bottom: 1.2rem;
   background: linear-gradient(90deg, #5704ff, #00c9a7);
+  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   letter-spacing: -0.3px;
@@ -636,6 +643,7 @@
   margin-bottom: .4rem;
   font-weight: 600;
   background: linear-gradient(90deg, var(--c-accent, #00e5ff), #a6ffef);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -662,6 +670,7 @@
 /* NUMBER GRADIENT */
 .counter-box h3 {
   background: linear-gradient(90deg, var(--c-accent2), #ffcf5c);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -904,6 +913,7 @@
   font-size: clamp(2.3rem, 5.5vw, 3.4rem);
   font-weight: 400;
   background: var(--cert-grad);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1079,6 +1089,7 @@
   font-size: 34px;
   font-weight: 800;
   background: linear-gradient(90deg, var(--d-text), var(--d-accent));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1115,7 +1126,7 @@
   gap: 8px;
   cursor: pointer;
   transition: 0.3s ease;
-  z-index: ;
+  z-index: 2;
 }
 
 .back-btn:hover {
@@ -1233,7 +1244,7 @@
 /******** LAYOUT ********/
 .gallery-container { background: var(--d-bg); color: var(--d-text); min-height: 100vh; }
 .gallery-navbar { display:flex; justify-content:space-between; align-items:center; padding:22px 80px; backdrop-filter:blur(12px); background:var(--d-nav-bg); border-bottom:1px solid var(--d-border); }
-.gallery-title { font-size:34px; font-weight:800; background:linear-gradient(90deg,var(--d-text),var(--d-accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.gallery-title { font-size:34px; font-weight:800; background:linear-gradient(90deg,var(--d-text),var(--d-accent)); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
 
 /******** NAV LINKS ********/
 .gallery-links { display:flex; gap:45px; font-size:17px; font-weight:500; }
@@ -1877,6 +1888,7 @@ DARK THEME (example)
   margin-bottom: 20px;
   letter-spacing: 2px;
   background: var(--resume-grad);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -2205,7 +2217,7 @@ DARK THEME (example)
   color: var(--c-text);
 }
 
-.root:{
+:root {
   --c-text: #000000;
 }
 /* Skills Table */
@@ -2321,6 +2333,7 @@ DARK THEME (example)
 .skill-percent {
   font-weight: 700;
   background: var(--skill-text-grad);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -2386,13 +2399,13 @@ DARK THEME (example)
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
   gap: 2rem;
 }
 
 .team-card {
   display: flex;
-  width: 700px;
+  width: 100%;
   gap: 1.8rem;
   padding: 1.7rem;
   align-items: center;
@@ -2438,6 +2451,7 @@ DARK THEME (example)
   font-size: 1.4rem;
   font-weight: 700;
   background: linear-gradient(90deg, #8a2be2, #00eaff);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 4px;
@@ -2793,7 +2807,6 @@ DARK THEME (example)
   }
 
   img, svg, video, canvas, audio, iframe, embed, object {
-    vertical-align: middle;
     display: block;
   }
 

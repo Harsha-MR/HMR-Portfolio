@@ -336,6 +336,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2vh 2vw;
+  box-sizing: border-box;
 }
 
 .gallery-modal-backdrop {
@@ -351,6 +353,9 @@
   align-items: center;
   justify-content: center;
   animation: galleryPop .22s ease-out;
+  max-width: 96vw;
+  max-height: 90vh;
+  box-sizing: border-box;
 }
 
 .gallery-modal-media img,

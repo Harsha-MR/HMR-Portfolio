@@ -34,18 +34,15 @@
 }
 
 /* PROGRESS WRAPPER (DESKTOP) */
+
 .intro-progress {
   position: absolute;
-  bottom: 55px; /* anchor near bottom on large screens */
+  bottom: 120px; /* anchor near bottom on large screens */
   width: 60%;
   max-width: 520px;
   text-align: center;
   z-index: 5;
 }
-.intro-progress {
-  position: absolute;
-  bottom: 120px; /* was too low, pulling it UP */
-
 
 /* PROGRESS TRACK (background) */
 .progress-track {
