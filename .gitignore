@@ -10,7 +10,4 @@ yarn-error.log*
 .DS_Store
 coverage
 
-public/gallery/
-public/certs/
-public/logos/
-public/assets/
+build
