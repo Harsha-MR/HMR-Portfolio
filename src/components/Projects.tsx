@@ -120,7 +120,13 @@ export default function Projects() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <img src={p.ss} alt={p.title} className="project-image" />
+                <img
+                  src={p.ss}
+                  alt={p.title}
+                  className="project-image"
+                  loading="lazy"
+                  decoding="async"
+                />
               </motion.div>
 
               <div className="project-content">

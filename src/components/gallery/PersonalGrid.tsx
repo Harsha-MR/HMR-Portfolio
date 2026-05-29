@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 
 const media = import.meta.glob(
@@ -24,52 +24,14 @@ export function PersonalGrid() {
     isVideo: boolean;
     alt: string;
   } | null>(null);
-  const preloadRefs = useRef<HTMLVideoElement[]>([]);
 
   const items = useMemo(() => Object.entries(media), []);
-  const videoSources = useMemo(
-    () =>
-      items
-        .map(([path, mod]) => {
-          const src = mod as string;
-          const lowerPath = path.toLowerCase();
-          const isVideo = videoExtensions.some((ext) => lowerPath.endsWith(ext));
-
-          return isVideo ? src : null;
-        })
-        .filter((src): src is string => Boolean(src)),
-    [items]
-  );
 
   useEffect(() => {
     // delay for smooth section-switch animation
     const timer = window.setTimeout(() => setLoaded(true), 80);
     return () => window.clearTimeout(timer);
   }, []);
-
-  useEffect(() => {
-    if (videoSources.length === 0) {
-      return;
-    }
-
-    preloadRefs.current = videoSources.map((src) => {
-      const video = document.createElement("video");
-      video.preload = "auto";
-      video.src = src;
-      video.muted = true;
-      video.playsInline = true;
-      video.load();
-      return video;
-    });
-
-    return () => {
-      preloadRefs.current.forEach((video) => {
-        video.removeAttribute("src");
-        video.load();
-      });
-      preloadRefs.current = [];
-    };
-  }, [videoSources]);
 
   useEffect(() => {
     const handleKey = (event: KeyboardEvent) => {
@@ -129,11 +91,11 @@ export function PersonalGrid() {
                   playsInline
                   loop
                   autoPlay
-                  preload="auto"
+                  preload="metadata"
                   aria-label="personal video"
                 />
               ) : (
-                <img src={src} alt={alt} loading="lazy" />
+                <img src={src} alt={alt} loading="lazy" decoding="async" />
               )}
             </div>
           );
